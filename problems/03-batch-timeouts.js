@@ -34,11 +34,17 @@ console.log(timeoutObjs); // [ Timeout {...},  Timeout {...}, Timeout {...} ]
 
 function batchTimeouts(callbacks, delays) {
   // Your code here 
-  callbacks.forEach((element, i) => {
-    setTimeout(callbacks, delays)
-  });
-  
+  // console.log(callbacks)
+  // console.log(delays)
+  let arr = [];
 
+  callbacks.forEach((element, i) => {
+  
+    
+    arr.push(setTimeout(element,delays[i]))
+  })
+  
+return arr
 }
 const sayHello = () => console.log('hi');
 const sayGoodbye = () => console.log('bye');
