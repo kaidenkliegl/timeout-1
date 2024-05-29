@@ -1,6 +1,6 @@
 /***********************************************************************
 Recall that the built-in `setTimeout` function accepts a delay in
-milliseconds. It would be cool if we had a version that could accept the
+milliseconds. It wouldse be cool if we had a version that could accept the
 delay in seconds!
 
 Write a function, `setSecondsTimeout`, that accepts a callback and a delay
@@ -14,7 +14,7 @@ node with the examples below. Use the command
 
 Examples:
 
-setSecondsTimeout(function () {
+SecondsTimeout(function () {
     console.log('hello');
 }, 1); // should print 'hello' after 1000 milliseconds
 
@@ -25,7 +25,14 @@ setSecondsTimeout(function () {
 
 function setSecondsTimeout(cb, delayInSeconds) {
   // Your code here 
+  delayInSeconds *= 1000;
+  
+  setTimeout(cb, delayInSeconds)
+
 }
+setSecondsTimeout(function () {
+  console.log('world');
+}, 1.4)
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
